@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rohit Shinde – Portfolio</title>
+  <meta name="description" content="Rohit Shinde – Full-Stack Developer portfolio. Projects: CodeBridge, FileFlow, Chat Application. Skills: HTML, CSS, JS, Advanced Java, Python, SQL."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0f14;          /* page bg (dark) */
+      --card:#0f1620;        /* card bg */
+      --muted:#92a0ad;       /* muted text */
+      --text:#eaf2ff;        /* primary text */
+      --accent:#4f8cff;      /* accent blue */
+      --accent-2:#24e1a4;    /* accent green */
+      --ring: rgba(79,140,255,.4);
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.65) 60%,rgba(11,15,20,0));backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+    .brand{display:flex;gap:10px;align-items:center}
+    .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700;color:#0a1016}
+    .brand h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.3px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{padding:10px 12px;border-radius:10px;color:var(--text);opacity:.9}
+    nav a:hover{background:rgba(255,255,255,.06);opacity:1}
+    .nav-actions{display:flex;gap:10px}
+    .btn{border:1px solid rgba(255,255,255,.12);background:#101826;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;transition:.2s box-shadow,.2s transform}
+    .btn:hover{box-shadow:0 6px 18px rgba(79,140,255,.25);transform:translateY(-1px)}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),#7aa8ff);border:none;color:#0a1016;font-weight:700}
+
+    /* Hero */
+    .hero{padding:72px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero h2{font-size:44px;line-height:1.05;margin:0 0 14px;font-weight:800}
+    .hero p{margin:0 0 26px;color:var(--muted);font-size:16px}
+    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+    .tag{font-size:12px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:#0e1520;color:#cfe3ff}
+    .hero-card{background:radial-gradient(1200px 500px at 20% -10%,rgba(79,140,255,.18),transparent 40%),var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .mini{padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:#0d1420}
+    .mini h4{margin:0 0 6px;font-size:14px}
+    .mini p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Sections */
+    section{padding:54px 0}
+    .section-title{font-size:26px;margin:0 0 16px}
+    .section-sub{margin:0 0 22px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 12px;color:var(--muted);font-size:14px}
+    .card .stack{display:flex;gap:8px;flex-wrap:wrap}
+    .stack span{font-size:11px;border:1px solid rgba(255,255,255,.10);padding:6px 8px;border-radius:999px;opacity:.9}
+    .card .links{display:flex;gap:10px;margin-top:12px}
+
+    /* Timeline */
+    .timeline{border-left:2px dashed rgba(255,255,255,.12);padding-left:16px}
+    .timeline .item{margin-bottom:18px}
+    .timeline .item h4{margin:0 0 6px;font-size:16px}
+    .timeline .item span{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+
+    /* Contact */
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+    form{display:grid;gap:12px}
+    input,textarea{background:#0c131d;border:1px solid rgba(255,255,255,.12);color:var(--text);padding:12px 14px;border-radius:12px;outline:none}
+    input:focus,textarea:focus{box-shadow:0 0 0 6px var(--ring);border-color:var(--accent)}
+    textarea{min-height:120px;resize:vertical}
+
+    /* Footer */
+    footer{padding:30px 0;color:#aebdd0;border-top:1px solid rgba(255,255,255,.06)}
+    .social{display:flex;gap:12px;flex-wrap:wrap}
+
+    /* Utilities */
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr;gap:20px}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .contact-grid{grid-template-columns:1fr}
+    }
+    @media (max-width: 640px){
+      .cards{grid-template-columns:1fr}
+      .hero h2{font-size:34px}
+      nav ul{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="avatar">RS</div>
+        <h1>Rohit Shinde</h1>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <a class="btn" href="https://github.com/rohitshinde08" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn primary" href="#contact">Hire Me</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <div>
+        <div class="tags">
+          <span class="tag">Full‑Stack Developer</span>
+          <span class="tag">Real‑time Collaboration</span>
+          <span class="tag">Clean, Production‑ready Code</span>
+        </div>
+        <h2>Hi, I'm Rohit — I build fast, reliable web apps with a focus on real‑time collaboration.</h2>
+        <p>
+          From crafting modern UIs to wiring scalable backends, I love turning ideas into usable products.
+          Recently, I’ve been building <strong>CodeBridge</strong>, a real‑time coding platform, and exploring
+          robust testing practices (STQA) to ship with confidence.
+        </p>
+        <div class="grid-2">
+          <a class="btn primary" href="#projects">See My Work</a>
+          <a class="btn" href="#resume">View Resume</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div class="mini">
+            <h4>Role / Tagline</h4>
+            <p>Full‑Stack Developer — building collaborative, user‑focused web experiences.</p>
+          </div>
+          <div class="mini">
+            <h4>Currently</h4>
+            <p>Designing the EditorPage & real‑time features for <em>CodeBridge</em>.</p>
+          </div>
+          <div class="mini">
+            <h4>Toolbox</h4>
+            <p>HTML · CSS · JS · Advanced Java · Python · SQL · Express · Socket.io · MySQL · JWT</p>
+          </div>
+          <div class="mini">
+            <h4>Open to</h4>
+            <p>Full‑time roles & internships (Web / Backend / Full‑Stack)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-sub">
+        I'm a developer who enjoys building practical, job‑ready products. In past projects we discussed,
+        I engineered a collaborative code editor (<strong>CodeBridge</strong>) using Express, Socket.io,
+        JWT auth and MySQL; explored design systems and responsive UI; and planned a modular institute portal
+        with results, attendance, and fees workflows. I care about reliability, clean UI, and smooth developer UX.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <p class="section-sub">Hands‑on with web fundamentals and backend foundations.</p>
+      <div class="cards" role="list">
+        <div class="card" role="listitem">
+          <h3>Frontend</h3>
+          <p>Semantic, accessible, responsive interfaces.</p>
+          <div class="stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            <span>Responsive Design</span><span>UI/UX</span>
+          </div>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Backend</h3>
+          <p>APIs, real‑time events, auth & data persistence.</p>
+          <div class="stack">
+            <span>Advanced Java</span><span>Python</span><span>Express</span><span>Socket.io</span>
+            <span>JWT</span><span>REST</span>
+          </div>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Database & Tools</h3>
+          <p>Efficient queries, migrations, deployments.</p>
+          <div class="stack">
+            <span>SQL</span><span>MySQL</span><span>Git & GitHub</span><span>Testing (STQA)</span>
+            <span>Netlify/GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-sub">A few things I’ve been building and learning from.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <h3>CodeBridge</h3>
+          <p>A real‑time collaborative coding platform to bridge the gap between coders. Built with Express, Socket.io, JWT auth, and MySQL; focused on editor UX and presence.</p>
+          <div class="stack"><span>Node/Express</span><span>Socket.io</span><span>MySQL</span><span>JWT</span></div>
+          <div class="links">
+            <a class="btn" href="https://github.com/rohitshinde08/CodeBridge" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <h3>FileFlow</h3>
+          <p>A file management workflow prototype to upload, preview, and organize files with a clean UI and robust validations.</p>
+          <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          <div class="links">
+            <a class="btn" href="https://github.com/rohitshinde08/FileFlow" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Chat Application</h3>
+          <p>Real‑time chat with rooms and typing indicators; lightweight UI and event‑driven backend.</p>
+          <div class="stack"><span>Socket.io</span><span>Express</span><span>JS</span></div>
+          <div class="links">
+            <a class="btn" href="https://github.com/rohitshinde08/chat-application" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Resume / Experience & Education -->
+    <section id="resume">
+      <h2 class="section-title">Resume</h2>
+      <p class="section-sub">Snapshot of experience and education. <em>(Add your PDF link to the button below.)</em></p>
+      <div class="grid-2">
+        <div class="timeline" aria-label="Experience timeline">
+          <div class="item">
+            <h4>Full‑Stack Projects</h4>
+            <span>CodeBridge, FileFlow, Chat App</span>
+            <p>Built production‑style features: auth, real‑time sockets, editor UX, and responsive layouts.</p>
+          </div>
+          <div class="item">
+            <h4>Testing & Quality (STQA)</h4>
+            <span>Coursework & practice</span>
+            <p>Adopted a test‑first mindset and QA checklists to ship stable features faster.</p>
+          </div>
+        </div>
+        <div class="timeline" aria-label="Education timeline">
+          <div class="item">
+            <h4>Computer Science (In Progress)</h4>
+            <span>Core focus: Web, Java, Python, SQL</span>
+            <p>Projects emphasize collaboration, clean code, and performance.</p>
+          </div>
+          <a class="btn primary" style="margin-top:8px" href="/RohitShindeRESUME.pdf">Download Resume (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Let’s talk about roles, projects, or collaboration.</p>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Reach Out</h3>
+          <p>Email: <a href="mailto:rohit.shinde9575@gmail.com">rohit.shinde9575@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/rohitshinde08" target="_blank" rel="noreferrer">@rohitshinde08</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/rohit-shinde-219578292" target="_blank" rel="noreferrer">Rohit Shinde</a></p>
+          <p>Phone: <a href="tel:+9193078661184">93078661184</a></p>
+          <div class="social">
+            <a class="btn" href="mailto:rohit.shinde9575@gmail.com">Email Me</a>
+            <a class="btn" target="_blank" rel="noreferrer" href="https://github.com/rohitshinde08">GitHub</a>
+            <a class="btn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rohit-shinde-219578292">LinkedIn</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Quick Message</h3>
+          <form action="mailto:rohit.shinde9575@gmail.com" method="post" enctype="text/plain">
+            <input name="name" placeholder="Your name" required />
+            <input name="email" type="email" placeholder="Your email" required />
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button class="btn primary" type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <span>© <span id="year"></span> Rohit Shinde. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    // current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth anchor offset for sticky header (focus ring aid)
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if(id.length > 1){
+          const el = document.querySelector(id);
+          if(el){
+            e.preventDefault();
+            const top = el.getBoundingClientRect().top + window.scrollY - 70; // header height
+            window.scrollTo({top, behavior:'smooth'});
+            el.setAttribute('tabindex','-1');
+            el.focus({preventScroll:true});
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
