@@ -5,6 +5,12 @@ This portfolio reflects my journey in tech, creativity in design, and passion fo
 
 ---
 
+
+## 🚀 Live Demo
+
+🎯 **Visit here:** 👉 [rohit-portfolio-seven-tau.vercel.app](https://rohit-portfolio-seven-tau.vercel.app/)
+
+![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=flat-square&logo=vercel)
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
