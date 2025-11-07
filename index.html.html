@@ -1,102 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rohit Shinde – Portfolio</title>
-  <meta name="description" content="Rohit Shinde – Full-Stack Developer portfolio. Projects: CodeBridge, FileFlow, Chat Application. Skills: HTML, CSS, JS, Advanced Java, Python, SQL."/>
+  <meta name="description"
+    content="Rohit Shinde – Full-Stack Developer portfolio. Projects: CodeBridge, FileFlow, Chat Application. Skills: HTML, CSS, JS, Advanced Java, Python, SQL." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0f14;          /* page bg (dark) */
-      --card:#0f1620;        /* card bg */
-      --muted:#92a0ad;       /* muted text */
-      --text:#eaf2ff;        /* primary text */
-      --accent:#4f8cff;      /* accent blue */
-      --accent-2:#24e1a4;    /* accent green */
-      --ring: rgba(79,140,255,.4);
+    :root {
+      --bg: #0b0f14;
+      /* page bg (dark) */
+      --card: #0f1620;
+      /* card bg */
+      --muted: #92a0ad;
+      /* muted text */
+      --text: #eaf2ff;
+      /* primary text */
+      --accent: #4f8cff;
+      /* accent blue */
+      --accent-2: #24e1a4;
+      /* accent green */
+      --ring: rgba(79, 140, 255, .4);
       --radius: 18px;
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      scroll-behavior: smooth
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px
+    }
 
     /* Header */
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(11,15,20,.95),rgba(11,15,20,.65) 60%,rgba(11,15,20,0));backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
-    .brand{display:flex;gap:10px;align-items:center}
-    .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700;color:#0a1016}
-    .brand h1{font-size:16px;margin:0;font-weight:700;letter-spacing:.3px}
-    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
-    nav a{padding:10px 12px;border-radius:10px;color:var(--text);opacity:.9}
-    nav a:hover{background:rgba(255,255,255,.06);opacity:1}
-    .nav-actions{display:flex;gap:10px}
-    .btn{border:1px solid rgba(255,255,255,.12);background:#101826;color:var(--text);padding:10px 14px;border-radius:12px;cursor:pointer;transition:.2s box-shadow,.2s transform}
-    .btn:hover{box-shadow:0 6px 18px rgba(79,140,255,.25);transform:translateY(-1px)}
-    .btn.primary{background:linear-gradient(135deg,var(--accent),#7aa8ff);border:none;color:#0a1016;font-weight:700}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(180deg, rgba(11, 15, 20, .95), rgba(11, 15, 20, .65) 60%, rgba(11, 15, 20, 0));
+      backdrop-filter: saturate(1.4) blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px
+    }
+
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: #0a1016
+    }
+
+    .brand h1 {
+      font-size: 16px;
+      margin: 0;
+      font-weight: 700;
+      letter-spacing: .3px
+    }
+
+    nav ul {
+      display: flex;
+      gap: 18px;
+      list-style: none;
+      margin: 0;
+      padding: 0
+    }
+
+    nav a {
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--text);
+      opacity: .9
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, .06);
+      opacity: 1
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 10px
+    }
+
+    .btn {
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: #101826;
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: .2s box-shadow, .2s transform
+    }
+
+    .btn:hover {
+      box-shadow: 0 6px 18px rgba(79, 140, 255, .25);
+      transform: translateY(-1px)
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #7aa8ff);
+      border: none;
+      color: #0a1016;
+      font-weight: 700
+    }
 
     /* Hero */
-    .hero{padding:72px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
-    .hero h2{font-size:44px;line-height:1.05;margin:0 0 14px;font-weight:800}
-    .hero p{margin:0 0 26px;color:var(--muted);font-size:16px}
-    .tags{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
-    .tag{font-size:12px;padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:#0e1520;color:#cfe3ff}
-    .hero-card{background:radial-gradient(1200px 500px at 20% -10%,rgba(79,140,255,.18),transparent 40%),var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-    .hero-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .mini{padding:18px;border-radius:16px;border:1px solid rgba(255,255,255,.06);background:#0d1420}
-    .mini h4{margin:0 0 6px;font-size:14px}
-    .mini p{margin:0;color:var(--muted);font-size:13px}
+    .hero {
+      padding: 72px 0 40px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .hero h2 {
+      font-size: 44px;
+      line-height: 1.05;
+      margin: 0 0 14px;
+      font-weight: 800
+    }
+
+    .hero p {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 16px
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 18px 0
+    }
+
+    .tag {
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      background: #0e1520;
+      color: #cfe3ff
+    }
+
+    .hero-card {
+      background: radial-gradient(1200px 500px at 20% -10%, rgba(79, 140, 255, .18), transparent 40%), var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow)
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px
+    }
+
+    .mini {
+      padding: 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      background: #0d1420
+    }
+
+    .mini h4 {
+      margin: 0 0 6px;
+      font-size: 14px
+    }
+
+    .mini p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px
+    }
 
     /* Sections */
-    section{padding:54px 0}
-    .section-title{font-size:26px;margin:0 0 16px}
-    .section-sub{margin:0 0 22px;color:var(--muted)}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px;font-size:18px}
-    .card p{margin:0 0 12px;color:var(--muted);font-size:14px}
-    .card .stack{display:flex;gap:8px;flex-wrap:wrap}
-    .stack span{font-size:11px;border:1px solid rgba(255,255,255,.10);padding:6px 8px;border-radius:999px;opacity:.9}
-    .card .links{display:flex;gap:10px;margin-top:12px}
+    section {
+      padding: 54px 0
+    }
+
+    .section-title {
+      font-size: 26px;
+      margin: 0 0 16px
+    }
+
+    .section-sub {
+      margin: 0 0 22px;
+      color: var(--muted)
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow)
+    }
+
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px
+    }
+
+    .card p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 14px
+    }
+
+    .card .stack {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .stack span {
+      font-size: 11px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      padding: 6px 8px;
+      border-radius: 999px;
+      opacity: .9
+    }
+
+    .card .links {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px
+    }
 
     /* Timeline */
-    .timeline{border-left:2px dashed rgba(255,255,255,.12);padding-left:16px}
-    .timeline .item{margin-bottom:18px}
-    .timeline .item h4{margin:0 0 6px;font-size:16px}
-    .timeline .item span{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+    .timeline {
+      border-left: 2px dashed rgba(255, 255, 255, .12);
+      padding-left: 16px
+    }
+
+    .timeline .item {
+      margin-bottom: 18px
+    }
+
+    .timeline .item h4 {
+      margin: 0 0 6px;
+      font-size: 16px
+    }
+
+    .timeline .item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 6px
+    }
 
     /* Contact */
-    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
-    form{display:grid;gap:12px}
-    input,textarea{background:#0c131d;border:1px solid rgba(255,255,255,.12);color:var(--text);padding:12px 14px;border-radius:12px;outline:none}
-    input:focus,textarea:focus{box-shadow:0 0 0 6px var(--ring);border-color:var(--accent)}
-    textarea{min-height:120px;resize:vertical}
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px
+    }
+
+    form {
+      display: grid;
+      gap: 12px
+    }
+
+    input,
+    textarea {
+      background: #0c131d;
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: var(--text);
+      padding: 12px 14px;
+      border-radius: 12px;
+      outline: none
+    }
+
+    input:focus,
+    textarea:focus {
+      box-shadow: 0 0 0 6px var(--ring);
+      border-color: var(--accent)
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical
+    }
 
     /* Footer */
-    footer{padding:30px 0;color:#aebdd0;border-top:1px solid rgba(255,255,255,.06)}
-    .social{display:flex;gap:12px;flex-wrap:wrap}
+    footer {
+      padding: 30px 0;
+      color: #aebdd0;
+      border-top: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .social {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap
+    }
 
     /* Utilities */
-    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px
+    }
+
+    .resume-btn-wrapper {
+      margin-top: 12px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+
 
     /* Responsive */
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr;gap:20px}
-      .cards{grid-template-columns:repeat(2,1fr)}
-      .contact-grid{grid-template-columns:1fr}
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 20px
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr
+      }
     }
-    @media (max-width: 640px){
-      .cards{grid-template-columns:1fr}
-      .hero h2{font-size:34px}
-      nav ul{display:none}
+
+    @media (max-width: 640px) {
+      .resume-btn-wrapper {
+        justify-content: center;
+      }
+
+      .btn.primary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .cards {
+        grid-template-columns: 1fr
+      }
+
+      .hero h2 {
+        font-size: 15px
+      }
+
+      nav ul {
+        display: none
+      }
+
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav">
@@ -166,10 +473,8 @@
     <section id="about">
       <h2 class="section-title">About Me</h2>
       <p class="section-sub">
-        I'm a developer who enjoys building practical, job‑ready products. In past projects we discussed,
-        I engineered a collaborative code editor (<strong>CodeBridge</strong>) using Express, Socket.io,
-        JWT auth and MySQL; explored design systems and responsive UI; and planned a modular institute portal
-        with results, attendance, and fees workflows. I care about reliability, clean UI, and smooth developer UX.
+        Beyond coding, I’m deeply interested in software quality assurance and building reliable systems that scale —
+        because great code isn’t just about functionality, it’s about trust, collaboration, and performance.
       </p>
     </section>
 
@@ -212,15 +517,18 @@
       <div class="cards" role="list">
         <article class="card" role="listitem">
           <h3>CodeBridge</h3>
-          <p>A real‑time collaborative coding platform to bridge the gap between coders. Built with Express, Socket.io, JWT auth, and MySQL; focused on editor UX and presence.</p>
+          <p>A real‑time collaborative coding platform to bridge the gap between coders. Built with Express, Socket.io,
+            JWT auth, and MySQL; focused on editor UX and presence.</p>
           <div class="stack"><span>Node/Express</span><span>Socket.io</span><span>MySQL</span><span>JWT</span></div>
           <div class="links">
-            <a class="btn" href="https://github.com/rohitshinde08/CodeBridge" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://github.com/rohitshinde08/CodeBridge" target="_blank"
+              rel="noreferrer">GitHub</a>
           </div>
         </article>
         <article class="card" role="listitem">
           <h3>FileFlow</h3>
-          <p>A file management workflow prototype to upload, preview, and organize files with a clean UI and robust validations.</p>
+          <p>A file management workflow prototype to upload, preview, and organize files with a clean UI and robust
+            validations.</p>
           <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
           <div class="links">
             <a class="btn" href="https://github.com/rohitshinde08/FileFlow" target="_blank" rel="noreferrer">GitHub</a>
@@ -229,7 +537,7 @@
         <article class="card" role="listitem">
           <h3>Chat Application</h3>
           <p>Real‑time chat with rooms and typing indicators; lightweight UI and event‑driven backend.</p>
-          <div class="stack"><span>Socket.io</span><span>Express</span><span>JS</span></div>
+          <div class="stack"><span>Socket.io</span><span>Java</span><span>Client-Server Model</span></div>
           <div class="links">
             <a class="btn" href="https://github.com/rohitshinde08/Chat-App" target="_blank" rel="noreferrer">GitHub</a>
           </div>
@@ -240,7 +548,7 @@
     <!-- Resume / Experience & Education -->
     <section id="resume">
       <h2 class="section-title">Resume</h2>
-      <p class="section-sub">Snapshot of experience and education. <em>(Add your PDF link to the button below.)</em></p>
+
       <div class="grid-2">
         <div class="timeline" aria-label="Experience timeline">
           <div class="item">
@@ -260,7 +568,11 @@
             <span>Core focus: Web, Java, Python, SQL</span>
             <p>Projects emphasize collaboration, clean code, and performance.</p>
           </div>
-          <a class="btn primary" style="margin-top:8px" href="/RohitShindeRESUME.pdf">Download Resume (PDF)</a>
+          <div class="resume-btn-wrapper">
+            <a class="btn primary" href="/RohitShindeRESUME.pdf">
+              Download Resume (PDF)
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -274,12 +586,14 @@
           <h3>Reach Out</h3>
           <p>Email: <a href="mailto:rohit.shinde9575@gmail.com">rohit.shinde9575@gmail.com</a></p>
           <p>GitHub: <a href="https://github.com/rohitshinde08" target="_blank" rel="noreferrer">@rohitshinde08</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/rohit-shinde-219578292" target="_blank" rel="noreferrer">Rohit Shinde</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/rohit-shinde-219578292" target="_blank"
+              rel="noreferrer">Rohit Shinde</a></p>
           <p>Phone: <a href="tel:+9193078661184">93078661184</a></p>
           <div class="social">
             <a class="btn" href="mailto:rohit.shinde9575@gmail.com">Email Me</a>
             <a class="btn" target="_blank" rel="noreferrer" href="https://github.com/rohitshinde08">GitHub</a>
-            <a class="btn" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/rohit-shinde-219578292">LinkedIn</a>
+            <a class="btn" target="_blank" rel="noreferrer"
+              href="https://www.linkedin.com/in/rohit-shinde-219578292">LinkedIn</a>
           </div>
         </div>
         <div class="card">
@@ -296,7 +610,8 @@
   </main>
 
   <footer>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div class="container"
+      style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
       <span>© <span id="year"></span> Rohit Shinde. All rights reserved.</span>
     </div>
   </footer>
@@ -309,18 +624,19 @@
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const id = a.getAttribute('href');
-        if(id.length > 1){
+        if (id.length > 1) {
           const el = document.querySelector(id);
-          if(el){
+          if (el) {
             e.preventDefault();
             const top = el.getBoundingClientRect().top + window.scrollY - 70; // header height
-            window.scrollTo({top, behavior:'smooth'});
-            el.setAttribute('tabindex','-1');
-            el.focus({preventScroll:true});
+            window.scrollTo({ top, behavior: 'smooth' });
+            el.setAttribute('tabindex', '-1');
+            el.focus({ preventScroll: true });
           }
         }
       });
     });
   </script>
 </body>
+
 </html>
