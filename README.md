@@ -49,7 +49,7 @@ This project serves as my **digital identity**, allowing others to easily connec
 | **Programming Languages** | Java, Python |
 | **Database** | MySQL |
 | **Version Control** | Git, GitHub |
-| **Hosting** | GitHub Pages (or Netlify / Vercel) |
+| **Hosting** | Vercel |
 
 ---
 
